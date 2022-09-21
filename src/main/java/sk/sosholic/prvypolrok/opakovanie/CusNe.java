@@ -7,7 +7,7 @@ public class CusNe {
         System.out.println("zadaj menoa stlac enter: ");
         String meno = scanner.nextLine();
 
-        //dopln zbytok tak aby program vyzadoval zadanie mena a priezviska od konzoli
+        //dopln zbytok tak aby program vyzadoval zadanie mena a priezviska od konzoly
 
         MojeMeno mojeMeno = new MojeMeno("Kristian", "Palkovic");
 
