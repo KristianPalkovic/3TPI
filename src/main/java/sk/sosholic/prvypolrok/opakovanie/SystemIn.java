@@ -62,13 +62,21 @@ public class SystemIn {
                    break;
                case 4:
                    System.out.print("Zadaj prve cislo a stlac enter: ");
-                   int scitanec7 = scanner.nextInt();
+                   double scitanec7 = scanner.nextInt();
                    System.out.print("Zadaj druhe cislo a stlac enter:");
-                   int scitanec8 = scanner.nextInt();
-                   System.out.println("Vysledok delenia je: " + (scitanec7 / scitanec8));
+                   double scitanec8 = scanner.nextInt();
+                   if(scitanec8 == 0){
+                       System.out.println("Neda sa daleit nulou ");
+                   }else{
+                       System.out.println("Vysledok delenia je: " + (scitanec7 / scitanec8));
+                   }
                    break;
+               default:
+                   System.out.println("!!! Zly Vyber !!! Zadaj znova");
+                   continue;
            }
+           System.out.println("Ukoncenie programu stlac 0 a enter. Pre pokracovanie stlac 1");
+           exit1 = scanner.nextInt();
         }
-
     }
 }
