@@ -18,6 +18,7 @@ public class AplikaciaMojejDatabazy {
             System.out.println("ak chces zmazat zaznam stlac 2");
             System.out.println("ak chces zobrazit zaznam stlac 3");
             System.out.println("ak chces zobrazit CELY zoznam stlac 4");
+            System.out.println("ak chces zobrazit najstarsieho ziaka stlac 5");
             System.out.println("Zadaj moznost: ");
             int menu = scanner.nextInt();
             switch (menu){
@@ -40,22 +41,40 @@ public class AplikaciaMojejDatabazy {
                 case 2:
                     vypisList();
                     System.out.println("Vyber cislo ziaka ktoreho chces zmazat");
-                    /*if(){
-                        System.out.println();
-                    }else{
-                        System.out.println();
-                    }*/
-                    int menoNaZmatanie=scanner.nextInt();
-                    //ziakList.remove(menoNaZmatanie-1);
+                    int menoNaZmazanie=scanner.nextInt();
+                    ziaklist.remove(menoNaZmazanie-1);
                     /*try{
-                        int menoNaZmatanie=scanner.nextInt();
-                        ziakList.remove(menoNaZmatanie-1);
-                    }catch(Exception ex){
+                        int menoNaZmazanie=scanner.nextInt();
+                        ziaklist.remove(menoNaZmazanie-1);
+                    }catch (Exception ex){
                     System.out.println(" chyba clen nezmazany" + ex.getMessage());
+                    scanner.nextLine();
+                    }*/
+                    break;
+                case 3:
+                    System.out.println("Zadaj poradie ziaka na zobrazenie: ");
+                    int cislo = scanner.nextInt();
+                    if(cislo>ziaklist.size()){
+                        System.out.println("Cislo je mimo rozsah");
+                    }else if(cislo<0){
+                        System.out.println("Cislo je mimo rozsah");
+                    }else{
+                        Ziak ziakNaZobrazenie = ziaklist.get(cislo -1);
+                        System.out.println("ziak na poradí "+ "je "+ziakNaZobrazenie);
                     }
-                    break;*/
+                    break;
                 case 4:
                     System.out.println(ziaklist.toString());
+                    break;
+                case 5:
+                    int poradie = 0;
+                    for(int i =0; i < ziaklist.size(); i++){
+                        Ziak ziak1 = ziaklist.get(i);
+                        if (ziaklist.get(poradie).getVek() < ziak1.getVek()){
+                            poradie = i;
+                        }
+                    }
+                    System.out.println("Ziak s najvacsim vekom je " + ziaklist.get(poradie));
             }
         }
     }
@@ -66,13 +85,13 @@ public class AplikaciaMojejDatabazy {
         ziaklist.add(new Ziak(16, "Pista", "Ostry"));
         ziaklist.add(new Ziak(18, "Ignac", "Kunstapa"));
         ziaklist.add(new Ziak(21, "Juraj", "Rene"));
-        ziaklist.add(new Ziak(22, "Roman", "Vodovy"));
-        ziaklist.add(new Ziak(25, "Dalibor", "Chabr"));
-        ziaklist.add(new Ziak(26, "Erik", "Dravy"));
-        ziaklist.add(new Ziak(30, "Viliam", "Vysoky"));
+        ziaklist.add(new Ziak(15, "Roman", "Vodovy"));
+        ziaklist.add(new Ziak(20, "Dalibor", "Chabr"));
+        ziaklist.add(new Ziak(17, "Erik", "Dravy"));
+        ziaklist.add(new Ziak(19, "Viliam", "Vysoky"));
     }
     private static void vypisList(){
-        /*for(int i =1, i<=ziakList.size(); i++){}
+        /*for(int i =1, i<=ziaklist.size(); i++){}
         System.out.println(i+". " + ziaklist.get(i-1));
 
         System.out.println(ziaklist.toString().replace(",", "\n"));*/
