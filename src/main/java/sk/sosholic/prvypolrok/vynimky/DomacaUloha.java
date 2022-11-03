@@ -26,17 +26,17 @@ public class DomacaUloha {
 
 class DomacaUloha2 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //osetri program pomocou try catch tak aby bola chyba osetrena.
         Scanner scanner = new Scanner(System.in);
         System.out.println(" zadaj pismeno. PS> pri pismene program nahlasi chybu: ");
-        try{
+        try {
             int cislo = scanner.nextInt();
             System.out.println("zadane cislo je: " + cislo);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("nastala nam chyba a ta je " + ex.toString());
         }
-        // toto sa musi zobrazit vzdy aj ked bude chyba alebo chyba nebude
-        System.out.println(" ak toto vyriesim mam jednotku");
+        System.out.println("ak toto vyriesim mam jednotku");
     }
+
 }
