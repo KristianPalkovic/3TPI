@@ -36,7 +36,7 @@ class DomacaUloha2 {
         } catch (Exception ex) {
             System.out.println("nastala nam chyba a ta je " + ex.toString());
         }
+        // toto sa musi zobrazit vzdy aj ked bude chyba alebo chyba nebude
         System.out.println("ak toto vyriesim mam jednotku");
     }
-
 }
