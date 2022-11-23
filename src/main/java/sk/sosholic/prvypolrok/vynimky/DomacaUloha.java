@@ -1,5 +1,6 @@
 package sk.sosholic.prvypolrok.vynimky;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DomacaUloha {
@@ -33,7 +34,7 @@ class DomacaUloha2 {
         try {
             int cislo = scanner.nextInt();
             System.out.println("zadane cislo je: " + cislo);
-        } catch (Exception ex) {
+        } catch (InputMismatchException ex){
             System.out.println("nastala nam chyba a ta je " + ex.toString());
         }
         // toto sa musi zobrazit vzdy aj ked bude chyba alebo chyba nebude
