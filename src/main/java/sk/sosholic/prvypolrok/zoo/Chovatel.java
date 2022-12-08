@@ -20,7 +20,6 @@ public class Chovatel {
             if(zvieraCyklus.getValue() > najdrahsieZviera.getValue()){
                 najdrahsieZviera = zvieraCyklus;
             }else{
-
             }
         }
         return najdrahsieZviera;
