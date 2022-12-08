@@ -1,4 +1,4 @@
-package sk.sosholic.prvypolrok;
+package sk.sosholic.prvypolrok.kalkulacka;
 import java.util.Scanner;
 
 public class BasicScanner {

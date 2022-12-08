@@ -1,4 +1,4 @@
-package sk.sosholic.prvypolrok;
+package sk.sosholic.prvypolrok.hadaniecisla;
 import java.util.Random;
 import java.util.Scanner;
 
