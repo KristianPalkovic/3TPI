@@ -24,5 +24,4 @@ public class Chovatel {
         }
         return najdrahsieZviera;
     }
-    //Komentar na git
 }
