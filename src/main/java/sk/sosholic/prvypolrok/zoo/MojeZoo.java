@@ -1,9 +1,4 @@
 package sk.sosholic.prvypolrok.zoo;
-import sk.sosholic.prvypolrok.databazaziakov.Ziak;
-
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class MojeZoo {
