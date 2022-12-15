@@ -1,6 +1,7 @@
 package sk.sosholic.prvypolrok.zoo;
 import sk.sosholic.prvypolrok.databazaziakov.Ziak;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,13 +23,17 @@ public class MojeZoo {
         Zviera zviera2 = new Zviera("slimak",20);
         mojChovatel.pridatZviera(zviera);
         mojChovatel.pridatZviera(zviera2);
+        mojChovatel.pridatZviera(new Zviera("kon", 13000));
+        mojChovatel.pridatZviera(new Zviera("sakal", 200));
         while (!exit) {
-            System.out.println("ak chces zobrazit meno Zoo stlac 0");
-            System.out.println("ak chces zobrazit meno Chovatela stlac 1");
-            System.out.println("ak chces pridat zviera stlac 2");
-            System.out.println("ak chces zobrazit zaznam stlac 3");
-            System.out.println("ak chces zobrazit najdahsie zviera stlac 4");
-            System.out.println("ak chces ukoncit program stlac 5");
+            System.out.println("*****************************");
+            System.out.println("0. Zobrazit meno Zoo");
+            System.out.println("1. Zobrazit meno Chovatela");
+            System.out.println("2. Pridat zviera");
+            System.out.println("3. Zobrazit zoznam zvierat");
+            System.out.println("4. Zobrazit najdahsie zviera");
+            System.out.println("5. Ukoncit program");
+            System.out.println("*****************************");
             System.out.println("Zadaj moznost: ");
             int menu = scanner.nextInt();
             switch (menu) {
@@ -39,11 +44,15 @@ public class MojeZoo {
                     System.out.println("Meno Chovatela je " + menoChovatela);
                     break;
                 case 2:
-                    Zviera zviera1 = new Zviera("Lev",1000);
-                    List<Zviera> zoo = new ArrayList<>();
-                    zoo.add(zviera1);
+                    System.out.println("Zadaj Meno Zvierata: ");
+                    String meno = scanner.nextLine();
+                    System.out.println("Zadaj Cenu Zvierata: ");
+                    double cena = scanner.nextDouble();
+                    mojChovatel.pridatZviera(new Zviera(meno,cena));
                     break;
                 case 3:
+                    System.out.println("Zoznam zvierat v zoo je: ");
+                    System.out.println(mojChovatel.getZoo());
                     break;
                 case 4:
                     System.out.println(mojChovatel.zistiNajdrahsieZviera().toString());

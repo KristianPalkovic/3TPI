@@ -3,8 +3,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Chovatel {
-    List<Zviera> zoo = new ArrayList<>();
-    String menoPriezvisko;
+    private List<Zviera> zoo = new ArrayList<>();
+    private String menoPriezvisko;
 
     public Chovatel(String menoPriezvisko) {
         this.menoPriezvisko = menoPriezvisko;
@@ -12,6 +12,10 @@ public class Chovatel {
 
     public void pridatZviera(Zviera zviera){
       zoo.add(zviera);
+    }
+
+    public List<Zviera> getZoo() {
+        return zoo;
     }
 
     public Zviera zistiNajdrahsieZviera(){
