@@ -9,6 +9,7 @@ public class MojeZoo {
     public static void main(String[] args) {
         String menoZoo;
         Chovatel mojChovatel;
+
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
@@ -17,6 +18,10 @@ public class MojeZoo {
         System.out.println("Zadaj meno Chovatela: ");
         String menoChovatela = scanner.nextLine();
         mojChovatel = new Chovatel(menoChovatela);
+        Zviera zviera = new Zviera("Lev",1000);
+        Zviera zviera2 = new Zviera("slimak",20);
+        mojChovatel.pridatZviera(zviera);
+        mojChovatel.pridatZviera(zviera2);
         while (!exit) {
             System.out.println("ak chces zobrazit meno Zoo stlac 0");
             System.out.println("ak chces zobrazit meno Chovatela stlac 1");
@@ -34,9 +39,9 @@ public class MojeZoo {
                     System.out.println("Meno Chovatela je " + menoChovatela);
                     break;
                 case 2:
-                    Zviera zviera = new Zviera("Lev",1000);
+                    Zviera zviera1 = new Zviera("Lev",1000);
                     List<Zviera> zoo = new ArrayList<>();
-                    zoo.add(zviera);
+                    zoo.add(zviera1);
                     break;
                 case 3:
                     break;
