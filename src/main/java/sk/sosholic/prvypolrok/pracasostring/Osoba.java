@@ -5,12 +5,16 @@ public class Osoba {
     String priezvisko;
     int vek;
 
-    public void setVek(int vek){
+    public Osoba(String meno, String priezvisko, int vek) {
+        if (meno.length() == 0) {
+            this.meno =("zakladny nazov");
+        }else{
+            this.meno = meno;
+        }
+        this.priezvisko = priezvisko;
         this.vek = vek;
     }
-    public void meno(String meno){
-        this.meno = meno;
-    }
+
 
     public int pocetSamohlaskyVPriezvisku(char samohlaska){
         int pocet = 0;
@@ -35,4 +39,23 @@ public class Osoba {
         return pocet;
     }
 
+    public String getMeno() {
+        return meno;
+    }
+
+    public void setMeno(String meno) {
+        this.meno = meno;
+    }
+
+    public String getPriezvisko() {
+        return priezvisko;
+    }
+
+    public void setPriezvisko(String priezvisko) {
+        this.priezvisko = priezvisko;
+    }
+
+    public int getVek() {
+        return vek;
+    }
 }

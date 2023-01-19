@@ -7,7 +7,11 @@ public class Strom {
     private int obvodPna;
 
     public Strom(String nazovStromu, boolean jeListnaty, int vyskaStromu, int obvodPna) {
-        this.nazovStromu = nazovStromu;
+        if (nazovStromu.length() == 0) {
+            this.nazovStromu =("zakladny nazov");
+        }else{
+            this.nazovStromu = nazovStromu;
+        }
         this.jeListnaty = jeListnaty;
         this.vyskaStromu = vyskaStromu;
         this.obvodPna = obvodPna;

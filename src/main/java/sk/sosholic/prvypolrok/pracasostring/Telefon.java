@@ -9,7 +9,11 @@ public class Telefon {
     private int hlbka;
 
     public Telefon(String nazov, boolean jeZapnuty, boolean jeDotykovy, int vyska, int sirka, int hlbka) {
-        this.nazov = nazov;
+        if (nazov.length() == 0) {
+            this.nazov =("zakladny nazov");
+        }else{
+            this.nazov = nazov;
+        }
         this.jeZapnuty = jeZapnuty;
         this.jeDotykovy = jeDotykovy;
         this.vyska = vyska;

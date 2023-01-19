@@ -6,7 +6,11 @@ public class Auto {
     private boolean jeNastartovane;
 
     public Auto(String znacka, int pocetDveri, boolean jeNastartovane) {
-        this.znacka = znacka;
+        if (znacka.length() == 0) {
+            this.znacka =("zakladny nazov");
+        }else{
+            this.znacka = znacka;
+        }
         this.pocetDveri = pocetDveri;
         this.jeNastartovane = jeNastartovane;
     }

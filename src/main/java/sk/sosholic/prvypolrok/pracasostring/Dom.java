@@ -8,7 +8,11 @@ public class Dom {
     private boolean maSklep;
 
     public Dom(String farbaFasady, boolean maKomin, int pocetOkien, int pocetIzieb, boolean maSklep) {
-        this.farbaFasady = farbaFasady;
+        if (farbaFasady.length() == 0) {
+            this.farbaFasady =("zakladny nazov");
+        }else{
+            this.farbaFasady = farbaFasady;
+        }
         this.maKomin = maKomin;
         this.pocetOkien = pocetOkien;
         this.pocetIzieb = pocetIzieb;
