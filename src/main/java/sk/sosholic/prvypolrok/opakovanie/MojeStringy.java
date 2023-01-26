@@ -1,7 +1,10 @@
 package sk.sosholic.prvypolrok.opakovanie;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class MojeStringy {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String meno = "Fera";
         String priezvisko = "Britva";
         Osoba danaOsoba;
@@ -33,5 +36,10 @@ public class MojeStringy {
 
        danaOsoba = new Osoba("Kamil", "Ostrý");
        System.out.println(danaOsoba.pocetZnakov);
+
+       FileWriter file = new FileWriter("osoba1.txt");
+       file.write("Súbor: "+danaOsoba.velkePismena()+", "+danaOsoba.malePismena()+", "+danaOsoba.celeMeno()+", "+
+               danaOsoba.pocetZnakov);
+       file.close();
     }
 }
