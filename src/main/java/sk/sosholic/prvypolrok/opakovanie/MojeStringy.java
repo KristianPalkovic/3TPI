@@ -42,5 +42,11 @@ public class MojeStringy {
                "Male meno s Malými pismenami je: "+danaOsoba.malePismena()+"\n"+"Celé Meno: "+danaOsoba.celeMeno()+"\n"+
                "Pocet znakov v mene je: " +danaOsoba.pocetZnakov);
        file.close();
+
+       FileWriter fw = new FileWriter("osoba2.txt", true);
+       fw.write("Moje meno je: "+ danaOsoba.getMeno());
+       fw.write("Moje meno s velkymi pismenami je:"+danaOsoba.velkePismena());
+       fw.write("Moje meno s malými pismenami je:"+danaOsoba.malePismena());
+       fw.close();
     }
 }
