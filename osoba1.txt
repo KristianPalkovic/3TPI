@@ -1,1 +1,5 @@
-Súbor: KAMIL OSTRÝ, kamil ostrý, Kamil Ostrý, 11
+Súbor: 
+Velke meno s velkymi pismenami je: KAMIL OSTRÝ
+Male meno s Malými pismenami je: kamil ostrý
+Celé Meno: Kamil Ostrý
+Pocet znakov v mene je: 11

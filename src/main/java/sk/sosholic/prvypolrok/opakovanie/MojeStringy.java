@@ -38,8 +38,9 @@ public class MojeStringy {
        System.out.println(danaOsoba.pocetZnakov);
 
        FileWriter file = new FileWriter("osoba1.txt");
-       file.write("Súbor: "+danaOsoba.velkePismena()+", "+danaOsoba.malePismena()+", "+danaOsoba.celeMeno()+", "+
-               danaOsoba.pocetZnakov);
+       file.write("Súbor: \n"+"Velke meno s velkymi pismenami je: "+danaOsoba.velkePismena() +"\n"+
+               "Male meno s Malými pismenami je: "+danaOsoba.malePismena()+"\n"+"Celé Meno: "+danaOsoba.celeMeno()+"\n"+
+               "Pocet znakov v mene je: " +danaOsoba.pocetZnakov);
        file.close();
     }
 }
