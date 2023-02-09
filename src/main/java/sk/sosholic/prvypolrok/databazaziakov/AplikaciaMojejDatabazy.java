@@ -35,66 +35,24 @@ public class AplikaciaMojejDatabazy {
                     System.out.println("Aplikacia sa vypina");
                     break;
                 case 1:
-                    System.out.println("Zadaj meno: ");
-                    String meno = scanner.next();
-                    System.out.println("Meno je: " + meno);
-                    System.out.println("Zadaj priezvisko: ");
-                    String priezvisko = scanner.next();
-                    System.out.println("Priezvisko je: " + priezvisko);
-                    System.out.println("Zadaj vek: ");
-                    int vek = scanner.nextInt();
-                    Ziak ziak = new Ziak(vek, meno, priezvisko);
-                    ziaklist.add(ziak);
+                    novyZiak();
                     break;
                 case 2:
-                    vypisList();
-                    System.out.println("Vyber cislo ziaka ktoreho chces zmazat");
-                    int menoNaZmazanie = scanner.nextInt();
-                    ziaklist.remove(menoNaZmazanie - 1);
-                    /*try{
-                        int menoNaZmazanie=scanner.nextInt();
-                        ziaklist.remove(menoNaZmazanie-1);
-                    }catch (Exception ex){
-                    System.out.println(" chyba clen nezmazany" + ex.getMessage());
-                    scanner.nextLine();
-                    }*/
+                    zmazanie();
                     break;
                 case 3:
-                    System.out.println("Zadaj poradie ziaka na zobrazenie: ");
-                    int cislo = scanner.nextInt();
-                    if (cislo > ziaklist.size()) {
-                        System.out.println("Cislo je mimo rozsah");
-                    } else if (cislo < 0) {
-                        System.out.println("Cislo je mimo rozsah");
-                    } else {
-                        Ziak ziakNaZobrazenie = ziaklist.get(cislo - 1);
-                        System.out.println("ziak na poradí " + "je " + ziakNaZobrazenie);
-                    }
+                    poradieNaZobrazenie();
                     break;
                 case 4:
                     System.out.println(ziaklist.toString());
                     break;
                 case 5:
-                    int poradie = 0;
-                    for (int i = 0; i < ziaklist.size(); i++) {
-                        Ziak ziak1 = ziaklist.get(i);
-                        if (ziaklist.get(poradie).getVek() < ziak1.getVek()) {
-                            poradie = i;
-                        }
-                    }
-                    System.out.println("Ziak s najvacsim vekom je " + ziaklist.get(poradie));
+                    NajvyssiVek();
+                    break;
                 case 6:
-                    FileWriter subor1 = new FileWriter("Zoznam Ziakov.txt");
-                    subor1.write("Zoznam Ziakov: \n");
-                    String Ziak = "";
-                    for (sk.sosholic.prvypolrok.databazaziakov.Ziak s : ziaklist) {
-                      //Ziak += s + "\n";
-                        subor1.write(s+ "\n");
-                    }
-                    //String zapisDoSuboru = "Zoznam Žiakov: \n" + Ziak;
-                    //subor1.write(zapisDoSuboru);
-                    subor1.close();
+                    vypisZoznamDoSuboru();
                     System.out.println("Zapísaný zoznam ziakov");
+                    break;
             }
         }
     }
@@ -110,6 +68,71 @@ public class AplikaciaMojejDatabazy {
         ziaklist.add(new Ziak(17, "Erik", "Dravy"));
         ziaklist.add(new Ziak(19, "Viliam", "Vysoky"));
 
+    }
+
+    //6
+    public static void vypisZoznamDoSuboru() throws IOException {
+        FileWriter subor1 = new FileWriter("Zoznam Ziakov.txt");
+        subor1.write("Zoznam Ziakov: \n");
+        String Ziak = "";
+        for (sk.sosholic.prvypolrok.databazaziakov.Ziak s : ziaklist) {
+            //Ziak += s + "\n";
+            subor1.write(s+ "\n");
+        }
+        //String zapisDoSuboru = "Zoznam Žiakov: \n" + Ziak;
+        //subor1.write(zapisDoSuboru);
+        subor1.close();
+    }
+    //5
+    public static void NajvyssiVek(){
+        int poradie = 0;
+        for (int i = 0; i < ziaklist.size(); i++) {
+            Ziak ziak1 = ziaklist.get(i);
+            if (ziaklist.get(poradie).getVek() < ziak1.getVek()) {
+                poradie = i;
+            }
+        }
+        System.out.println("Ziak s najvacsim vekom je " + ziaklist.get(poradie));
+    }
+    //3
+    public static void poradieNaZobrazenie(){
+        System.out.println("Zadaj poradie ziaka na zobrazenie: ");
+        int cislo = scanner.nextInt();
+        if (cislo > ziaklist.size()) {
+            System.out.println("Cislo je mimo rozsah");
+        } else if (cislo < 0) {
+            System.out.println("Cislo je mimo rozsah");
+        } else {
+            Ziak ziakNaZobrazenie = ziaklist.get(cislo - 1);
+            System.out.println("ziak na poradí " + "je " + ziakNaZobrazenie);
+        }
+    }
+    //2
+    public static void zmazanie(){
+        vypisList();
+        System.out.println("Vyber cislo ziaka ktoreho chces zmazat");
+        int menoNaZmazanie = scanner.nextInt();
+        ziaklist.remove(menoNaZmazanie - 1);
+                    /*try{
+                        int menoNaZmazanie=scanner.nextInt();
+                        ziaklist.remove(menoNaZmazanie-1);
+                    }catch (Exception ex){
+                    System.out.println(" chyba clen nezmazany" + ex.getMessage());
+                    scanner.nextLine();
+                    }*/
+    }
+    //1
+    public static void novyZiak(){
+        System.out.println("Zadaj meno: ");
+        String meno = scanner.next();
+        System.out.println("Meno je: " + meno);
+        System.out.println("Zadaj priezvisko: ");
+        String priezvisko = scanner.next();
+        System.out.println("Priezvisko je: " + priezvisko);
+        System.out.println("Zadaj vek: ");
+        int vek = scanner.nextInt();
+        Ziak ziak = new Ziak(vek, meno, priezvisko);
+        ziaklist.add(ziak);
     }
 
     private static void vypisList(){
