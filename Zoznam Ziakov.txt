@@ -1,4 +1,4 @@
-Zoznam Žiakov: 
+Zoznam Ziakov: 
 Ziak{vek=15, meno='Ferdinand', priezvisko='Pele'}
 Ziak{vek=17, meno='Jana', priezvisko='Fialova'}
 Ziak{vek=20, meno='Miloš', priezvisko='Mrkva'}

@@ -85,12 +85,14 @@ public class AplikaciaMojejDatabazy {
                     System.out.println("Ziak s najvacsim vekom je " + ziaklist.get(poradie));
                 case 6:
                     FileWriter subor1 = new FileWriter("Zoznam Ziakov.txt");
+                    subor1.write("Zoznam Ziakov: \n");
                     String Ziak = "";
                     for (sk.sosholic.prvypolrok.databazaziakov.Ziak s : ziaklist) {
-                        Ziak += s + "\n";
+                      //Ziak += s + "\n";
+                        subor1.write(s+ "\n");
                     }
-                    String zapisDoSuboru = "Zoznam Žiakov: \n" + Ziak;
-                    subor1.write(zapisDoSuboru);
+                  //String zapisDoSuboru = "Zoznam Žiakov: \n" + Ziak;
+                  //subor1.write(zapisDoSuboru);
                     subor1.close();
                     System.out.println("Zapísaný zoznam ziakov");
             }
