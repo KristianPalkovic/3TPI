@@ -91,8 +91,8 @@ public class AplikaciaMojejDatabazy {
                       //Ziak += s + "\n";
                         subor1.write(s+ "\n");
                     }
-                  //String zapisDoSuboru = "Zoznam Žiakov: \n" + Ziak;
-                  //subor1.write(zapisDoSuboru);
+                    //String zapisDoSuboru = "Zoznam Žiakov: \n" + Ziak;
+                    //subor1.write(zapisDoSuboru);
                     subor1.close();
                     System.out.println("Zapísaný zoznam ziakov");
             }
