@@ -1,4 +1,7 @@
 package sk.sosholic.prvypolrok.databazaziakov;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,7 +10,11 @@ public class AplikaciaMojejDatabazy {
     static List<Ziak> ziaklist= new ArrayList<>();
     private static boolean exit = false;
     private static Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
+
+    public AplikaciaMojejDatabazy(){
+    }
+
+    public static void main(String[] args) throws IOException {
         ziaci();
         vypisList();
         //System.out.println(ziaklist.toString());
@@ -19,9 +26,10 @@ public class AplikaciaMojejDatabazy {
             System.out.println("ak chces zobrazit zaznam stlac 3");
             System.out.println("ak chces zobrazit CELY zoznam stlac 4");
             System.out.println("ak chces zobrazit najstarsieho ziaka stlac 5");
+            System.out.println("ak chces vypisat zoznam ziakov do textoveho dokumentu stlac 6");
             System.out.println("Zadaj moznost: ");
             int menu = scanner.nextInt();
-            switch (menu){
+            switch (menu) {
                 case 0:
                     exit = true;
                     System.out.println("Aplikacia sa vypina");
@@ -35,14 +43,14 @@ public class AplikaciaMojejDatabazy {
                     System.out.println("Priezvisko je: " + priezvisko);
                     System.out.println("Zadaj vek: ");
                     int vek = scanner.nextInt();
-                    Ziak ziak = new Ziak(vek,meno,priezvisko);
+                    Ziak ziak = new Ziak(vek, meno, priezvisko);
                     ziaklist.add(ziak);
                     break;
                 case 2:
                     vypisList();
                     System.out.println("Vyber cislo ziaka ktoreho chces zmazat");
-                    int menoNaZmazanie=scanner.nextInt();
-                    ziaklist.remove(menoNaZmazanie-1);
+                    int menoNaZmazanie = scanner.nextInt();
+                    ziaklist.remove(menoNaZmazanie - 1);
                     /*try{
                         int menoNaZmazanie=scanner.nextInt();
                         ziaklist.remove(menoNaZmazanie-1);
@@ -54,13 +62,13 @@ public class AplikaciaMojejDatabazy {
                 case 3:
                     System.out.println("Zadaj poradie ziaka na zobrazenie: ");
                     int cislo = scanner.nextInt();
-                    if(cislo>ziaklist.size()){
+                    if (cislo > ziaklist.size()) {
                         System.out.println("Cislo je mimo rozsah");
-                    }else if(cislo<0){
+                    } else if (cislo < 0) {
                         System.out.println("Cislo je mimo rozsah");
-                    }else{
-                        Ziak ziakNaZobrazenie = ziaklist.get(cislo -1);
-                        System.out.println("ziak na poradí "+ "je "+ziakNaZobrazenie);
+                    } else {
+                        Ziak ziakNaZobrazenie = ziaklist.get(cislo - 1);
+                        System.out.println("ziak na poradí " + "je " + ziakNaZobrazenie);
                     }
                     break;
                 case 4:
@@ -68,13 +76,19 @@ public class AplikaciaMojejDatabazy {
                     break;
                 case 5:
                     int poradie = 0;
-                    for(int i =0; i < ziaklist.size(); i++){
+                    for (int i = 0; i < ziaklist.size(); i++) {
                         Ziak ziak1 = ziaklist.get(i);
-                        if (ziaklist.get(poradie).getVek() < ziak1.getVek()){
+                        if (ziaklist.get(poradie).getVek() < ziak1.getVek()) {
                             poradie = i;
                         }
                     }
                     System.out.println("Ziak s najvacsim vekom je " + ziaklist.get(poradie));
+                case 6:
+                    FileWriter subor1 = new FileWriter("Zoznam Ziakov.txt");
+                    String zapisDoSuboru = "Zoznam Žiakov: \n" + ziaklist.toString();
+                    subor1.write("\n");
+                    subor1.write(zapisDoSuboru);
+                    subor1.close();
             }
         }
     }
@@ -89,7 +103,9 @@ public class AplikaciaMojejDatabazy {
         ziaklist.add(new Ziak(20, "Dalibor", "Chabr"));
         ziaklist.add(new Ziak(17, "Erik", "Dravy"));
         ziaklist.add(new Ziak(19, "Viliam", "Vysoky"));
+
     }
+
     private static void vypisList(){
         /*for(int i =1, i<=ziaklist.size(); i++){}
         System.out.println(i+". " + ziaklist.get(i-1));

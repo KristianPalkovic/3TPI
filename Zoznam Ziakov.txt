@@ -1,0 +1,3 @@
+
+Zoznam Žiakov: 
+[Ziak{vek=15, meno='Ferdinand', priezvisko='Pele'}, Ziak{vek=17, meno='Jana', priezvisko='Fialova'}, Ziak{vek=20, meno='Miloš', priezvisko='Mrkva'}, Ziak{vek=16, meno='Pista', priezvisko='Ostry'}, Ziak{vek=18, meno='Ignac', priezvisko='Kunstapa'}, Ziak{vek=21, meno='Juraj', priezvisko='Rene'}, Ziak{vek=15, meno='Roman', priezvisko='Vodovy'}, Ziak{vek=20, meno='Dalibor', priezvisko='Chabr'}, Ziak{vek=17, meno='Erik', priezvisko='Dravy'}, Ziak{vek=19, meno='Viliam', priezvisko='Vysoky'}] 
