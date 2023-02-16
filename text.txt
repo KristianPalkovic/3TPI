@@ -1,2 +1,5 @@
 vlozeny text 
 medzera a text
+
+neco text neco
+ahoj cau
