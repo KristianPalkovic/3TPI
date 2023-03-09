@@ -1,0 +1,3 @@
+Ferrari, 0L, Elektrika
+Mercedes, 2.5L, Benzin
+BMW, 2L, Diesel
